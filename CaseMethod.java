@@ -97,27 +97,30 @@ public class CaseMethod {
     }
 
     static void menu4(){
-        double reg = 0, ung = 0, ris = 0;
-        int jmlReg = 0, jmlUng = 0, jmlRis = 0;
-        for (int i = 0; i < daftar; i++) {
-            String jenis = data[i][3];
-            double ipk = Double.parseDouble(data[i][2]);
-            if (jenis.equalsIgnoreCase("Reguler")) {
-                reg += ipk;
-                jmlReg++;
-            } else if (jenis.equalsIgnoreCase("Unggulan")) {
-                ung += ipk;
-                jmlUng++;
-            } else if (jenis.equalsIgnoreCase("Riset")) {
-                ris += ipk;
-                jmlRis++;
-            }
+    double reg = 0, ung = 0, ris = 0;
+    int jmlReg = 0, jmlUng = 0, jmlRis = 0;
+
+    for (int i = 0; i < daftar; i++) {
+        String jenis = data[i][3];
+        double ipk = Double.valueOf(data[i][2]);
+
+        if (jenis.equalsIgnoreCase("Reguler")) {
+            reg += ipk;
+            jmlReg++;
+        } else if (jenis.equalsIgnoreCase("Unggulan")) {
+            ung += ipk;
+            jmlUng++;
+        } else if (jenis.equalsIgnoreCase("Riset")) {
+            ris += ipk;
+            jmlRis++;
         }
-        System.out.println("\n=== Rata-rata IPK Berdasarkan Jenis Beasiswa ===");
-        System.out.println("Reguler\t\t: " + (jmlReg == 0 ? "tidak ada data" : String.format("%.2f", reg / jmlReg)));
-        System.out.println("Unggulan\t: " + (jmlUng == 0 ? "tidak ada data" : String.format("%.2f", ung / jmlUng)));
-        System.out.println("Riset\t\t: " + (jmlRis == 0 ? "tidak ada data" : String.format("%.2f", ris / jmlRis)));
-    } 
+    }
+
+    System.out.println("\nReguler  : " + (jmlReg == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (reg / jmlReg)));
+    System.out.println("Unggulan : " + (jmlUng == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (ung / jmlUng)));
+    System.out.println("Riset    : " + (jmlRis == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (ris / jmlRis)));
+}
+
     public static void main(String[] args) {
       int pilih;
 
