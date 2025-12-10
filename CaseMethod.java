@@ -117,7 +117,7 @@ public class CaseMethod {
         }
     }
 
-    System.out.println("\nReguler  : " + (jmlReg == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (reg / jmlReg)));
+    System.out.println("Reguler  : " + (jmlReg == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (reg / jmlReg)));
     System.out.println("Unggulan : " + (jmlUng == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (ung / jmlUng)));
     System.out.println("Riset    : " + (jmlRis == 0 ? "tidak ada pendaftar." : "rata-rata IPK = " + (ris / jmlRis)));
 }
