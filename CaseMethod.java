@@ -80,7 +80,7 @@ public class CaseMethod {
         String cari = input.nextLine();
         boolean nemu = false;
         
-        System.out.println("\n===== Hasil pencarian =====");
+        System.out.println("===== Hasil pencarian =====");
         for (int i = 0; i < daftar; i++) {
             if (data[i][3].equalsIgnoreCase(cari)) {
                 System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
