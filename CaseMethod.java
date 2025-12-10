@@ -41,7 +41,7 @@ public class CaseMethod {
         }
         data[daftar][3] = jenis;
 
-        System.out.print("Penghasilan Orang Tua (maks 2000000)\t: ");
+        System.out.print("Penghasilan orang tua (maksimal 2000000): ");
         int gaji = input.nextInt();
         input.nextLine();
 
@@ -71,7 +71,8 @@ public class CaseMethod {
                 data[i][1],  
                 data[i][2],   
                 data[i][3],  
-                data[i][4]);  
+                data[i][4]
+            );  
         }
     } 
     static void menu3(){
@@ -151,4 +152,3 @@ public class CaseMethod {
         } while (pilih != 5);
     }
 }
-
