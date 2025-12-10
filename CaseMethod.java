@@ -55,7 +55,24 @@ public class CaseMethod {
         System.out.println("Pendaftar berhasil disimpan. Total pendaftar: " + daftar);
     }
 
+    static void menu2() {
+        if ( daftar == 0) {
+            System.out.println("Belum ada pendaftar.");
+            return;
+        }    
+        System.out.println("==============================================================================");
+        System.out.printf("%-5s %-20s %-15s %-10s %-12s %-15s\n","No", "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
+        System.out.println("==============================================================================");
 
-    
+        for (int i = 0; i < daftar; i++) {
+            System.out.printf("%-5d %-20s %-15s %-10s %-12s %-15s\n",
+                (i + 1),
+                data[i][0],  
+                data[i][1],  
+                data[i][2],   
+                data[i][3],  
+                data[i][4]);  
+        }
+    }  
 }
 
