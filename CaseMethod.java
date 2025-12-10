@@ -123,5 +123,33 @@ public class CaseMethod {
         System.out.println("Unggulan\t: " + (jmlUng == 0 ? "tidak ada data" : String.format("%.2f", ung / jmlUng)));
         System.out.println("Riset\t\t: " + (jmlRis == 0 ? "tidak ada data" : String.format("%.2f", ris / jmlRis)));
     } 
+    public static void main(String[] args) {
+      int pilih;
+
+        do {
+            menu();
+            pilih = input.nextInt();
+
+            switch (pilih) {
+                case 1:
+                    menu1();
+                    break;
+                case 2:
+                    menu2();
+                    break;
+                case 3:
+                    menu3();
+                    break;
+                case 4:
+                    menu4();
+                    break;
+                case 5:
+                    System.out.println("Program selesai.");
+                    break;
+                default:
+                    System.out.println("Menu tidak tersedia.");
+            }
+        } while (pilih != 5);
+    }
 }
 
