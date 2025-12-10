@@ -73,6 +73,55 @@ public class CaseMethod {
                 data[i][3],  
                 data[i][4]);  
         }
-    }  
+    } 
+    static void menu3(){
+        System.out.print("Masukkan jenis beasiswa yang dicari : ");
+        String cari = input.nextLine();
+        boolean nemu = false;
+        
+        System.out.println("\n===== Hasil pencarian =====");
+        for (int i = 0; i < daftar; i++) {
+            if (data[i][3].equalsIgnoreCase(cari)) {
+                System.out.printf(
+                    "%-15s %-12s %-6s %-18s %-15s\n",
+                    "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
+                
+                System.out.printf("%-15s %-12s %-6s %-18s %-15s",
+                    data[i][0],
+                    data[i][1],
+                    data[i][2],
+                    data[i][3],
+                    data[i][4]);
+                nemu = true;
+            }
+        }
+        if (!nemu) {
+            System.out.println("Tidak ada pendaftar dengan jenis beasiswa tersebut.");
+        }
+        System.out.println("");
+    }
+
+    static void menu4(){
+        double reg = 0, ung = 0, ris = 0;
+        int jmlReg = 0, jmlUng = 0, jmlRis = 0;
+        for (int i = 0; i < daftar; i++) {
+            String jenis = data[i][3];
+            double ipk = Double.parseDouble(data[i][2]);
+            if (jenis.equalsIgnoreCase("Reguler")) {
+                reg += ipk;
+                jmlReg++;
+            } else if (jenis.equalsIgnoreCase("Unggulan")) {
+                ung += ipk;
+                jmlUng++;
+            } else if (jenis.equalsIgnoreCase("Riset")) {
+                ris += ipk;
+                jmlRis++;
+            }
+        }
+        System.out.println("\n=== Rata-rata IPK Berdasarkan Jenis Beasiswa ===");
+        System.out.println("Reguler\t\t: " + (jmlReg == 0 ? "tidak ada data" : String.format("%.2f", reg / jmlReg)));
+        System.out.println("Unggulan\t: " + (jmlUng == 0 ? "tidak ada data" : String.format("%.2f", ung / jmlUng)));
+        System.out.println("Riset\t\t: " + (jmlRis == 0 ? "tidak ada data" : String.format("%.2f", ris / jmlRis)));
+    } 
 }
 
