@@ -82,16 +82,11 @@ public class CaseMethod {
         System.out.println("\n===== Hasil pencarian =====");
         for (int i = 0; i < daftar; i++) {
             if (data[i][3].equalsIgnoreCase(cari)) {
-                System.out.printf(
-                    "%-15s %-12s %-6s %-18s %-15s\n",
+                System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
                     "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
                 
-                System.out.printf("%-15s %-12s %-6s %-18s %-15s",
-                    data[i][0],
-                    data[i][1],
-                    data[i][2],
-                    data[i][3],
-                    data[i][4]);
+                System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
+                    data[i][0],data[i][1],data[i][2],data[i][3],data[i][4]);
                 nemu = true;
             }
         }
