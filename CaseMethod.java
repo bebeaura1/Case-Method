@@ -129,6 +129,7 @@ public class CaseMethod {
         do {
             menu();
             pilih = input.nextInt();
+            input.nextLine();
 
             switch (pilih) {
                 case 1:
