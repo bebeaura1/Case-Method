@@ -91,7 +91,6 @@ public class CaseMethod {
         System.out.print("Masukkan jenis beasiswa yang dicari : ");
         String cari = input.nextLine();
         boolean nemu = false;
-        
         System.out.println("===== Hasil pencarian =====");
         System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
                     "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
