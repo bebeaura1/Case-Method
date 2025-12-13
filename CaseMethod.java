@@ -21,26 +21,33 @@ public class CaseMethod {
             System.out.println("Pendaftar sudah penuh.");
             return;
         }
-
+        
         System.out.print("Nama Mahasiswa\t\t\t\t: ");
-        data[daftar][0] = input.nextLine();
+        String nama = input.nextLine();
         System.out.print("NIM\t\t\t\t\t: ");
-        data[daftar][1] = input.nextLine();
-        System.out.print("IPK terakhir\t\t\t\t: ");
-        data[daftar][2] = input.nextLine();
-
+        String nim = input.nextLine();
+        
+        float ipk = 0f;
+        while (true) {
+            System.out.print("IPK terakhir\t\t\t\t: ");
+            ipk = input.nextFloat();
+            if (ipk > 4.00) {
+                System.out.println("Tidak Valid maksimal IPK 4.00");
+            } else {
+                break;
+            }
+        }
         String jenis;
+        input.nextLine();
         while (true) {
             System.out.print("Jenis Beasiswa (Reguler/Unggulan/Riset)\t: ");
             jenis = input.nextLine();
             if (jenis.equalsIgnoreCase("Reguler") || jenis.equalsIgnoreCase("Unggulan") || jenis.equalsIgnoreCase("Riset")){
                 break;
+            } else {
+                System.out.println("Jenis Beasiswa Tidak Valid");
             }
-            System.out.println("Jenis Beasiswa tidak valid.");
-            return;
         }
-        data[daftar][3] = jenis;
-
         System.out.print("Penghasilan orang tua (maksimal 2000000): ");
         int gaji = input.nextInt();
         input.nextLine();
@@ -49,6 +56,11 @@ public class CaseMethod {
             System.out.println("Pendaftaran dibatalkan karena penghasilan melebihi batas maksimal.");
             return;
         }
+
+        data[daftar][0] = nama;
+        data[daftar][1] = nim;
+        data[daftar][2] = String.valueOf(ipk);
+        data[daftar][3] = jenis;
         data[daftar][4] = Integer.toString(gaji);
         
         daftar++;
@@ -71,20 +83,20 @@ public class CaseMethod {
                 data[i][1],  
                 data[i][2],   
                 data[i][3],  
-                data[i][4]
-            );  
+                data[i][4]);  
         }
     } 
+
     static void menu3(){
         System.out.print("Masukkan jenis beasiswa yang dicari : ");
         String cari = input.nextLine();
         boolean nemu = false;
         
         System.out.println("===== Hasil pencarian =====");
+        System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
+                    "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
         for (int i = 0; i < daftar; i++) {
             if (data[i][3].equalsIgnoreCase(cari)) {
-                System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
-                    "Nama", "NIM", "IPK", "Beasiswa", "Penghasilan");
                 
                 System.out.printf("%-15s %-12s %-6s %-18s %-15s\n",
                     data[i][0],data[i][1],data[i][2],data[i][3],data[i][4]);
