@@ -7,15 +7,16 @@ public class CaseMethod {
 
     static void menu(){
         System.out.println(
-                "\n=== Sistem Pendaftaran Beasiswa ===\n" +
-                "1. Tambah Data Pendaftar Beasiswa\n" +
-                "2. Tampilkan Semua Pendaftar\n" +
-                "3. Cari Pendaftar berdasarkan Jenis Beasiswa\n" +
-                "4. Hitung Rata-rata IPK per Jenis Beasiswa\n" +
-                "5. Keluar"
-            );
-            System.out.print("Pilih menu (1-5): ");
+            "\n=== Sistem Pendaftaran Beasiswa ===" +
+            "\n1. Tambah Data Pendaftar Beasiswa" +
+            "\n2. Tampilkan Semua Pendaftar" +
+            "\n3. Cari Pendaftar berdasarkan Jenis Beasiswa" +
+            "\n4. Hitung Rata-rata IPK per Jenis Beasiswa" +
+            "\n5. Keluar"
+        );
+        System.out.print("Pilih menu (1-5): ");
     }
+
     static void menu1(){
         if (daftar >= n) {
             System.out.println("Pendaftar sudah penuh.");
@@ -31,12 +32,13 @@ public class CaseMethod {
         while (true) {
             System.out.print("IPK terakhir\t\t\t\t: ");
             ipk = input.nextFloat();
-            if (ipk > 4.00) {
+            if (ipk < 0 || ipk > 4.00) {
                 System.out.println("Tidak Valid maksimal IPK 4.00");
             } else {
                 break;
             }
         }
+
         String jenis;
         input.nextLine();
         while (true) {
@@ -48,6 +50,7 @@ public class CaseMethod {
                 System.out.println("Jenis Beasiswa Tidak Valid");
             }
         }
+
         System.out.print("Penghasilan orang tua (maksimal 2000000): ");
         int gaji = input.nextInt();
         input.nextLine();
